@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <title>Absence & Signature</title>
+    <link rel="manifest" href="/manifest.json">
+    <link href="http://localhost:8000/css/styles.css" rel="stylesheet" />
+    <link href="http://localhost:8000/css/custom.css" rel="stylesheet" />
+    <!-- TODO : Resolve this datatable css, still on CDN -->
+    <link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <!-- TODO : Cannot save inti local project cz some image stored in cloud -->
+    <link type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="http://localhost:8000/assets/jqueryconfirm/jquery-confirm.min.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/assets/jquerysignature/jquery.signature.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="theme-color" content="white"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Base Project">
+    <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+
+    <script src="http://localhost:8000/assets/fontawesome/font-awesome-5.15.1-all.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://localhost:8000/assets/jquery/jquery-1.12.4.min.js"></script> 
+    <script type="text/javascript" src="http://localhost:8000/assets/plugins/jquery-ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="http://localhost:8000/assets/jqueryconfirm/jquery-confirm.min.js"></script>
+    <script src="http://localhost:8000/assets/plugins/moment/moment.min.js"> </script>
+    
+</head>
+<body class="sb-nav-fixed">
+        <!-- Navbar -->
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Absence & Signature</a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+    <!-- Navbar Search-->
+    
+    <!-- Navbar-->    
+    <div class="pull-right navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0" role="navigation">
+        <ul class="nav ace-nav">
+            <li class="light-orange dropdown-modal">
+                <a data-toggle="dropdown" href="#" class="dropdown">
+                    <span class="user-info text-light"><i class="fas fa-user fa-fw"></i>
+                        Super Admin Role <i class="ace-icon fa fa-caret-down"></i>  
+                    </span>             
+                </a>
+                <ul class="bg-dark user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close" style="margin-top:-5px;margin-right:5px">
+                    <li>
+                        <a class="dropdown-item text-light" href="/usersettings">Settings</a>
+                    </li>
+                        <a class="dropdown-item text-light" href="#">Activity Log</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item text-light" href="http://localhost:8000/logout" onclick="event.preventDefault();                                                 document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                            <form id="logout-form" action="http://localhost:8000/logout" method="POST" class="d-none">
+                                <input type="hidden" name="_token" value="aRmlf99yIPpHoKRCkivH0LeCRpTDbznNJuDfr7ZE">                            </form>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- 
+    <form class=" ml-auto ml-md-0 ">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </form>
+    -->
+</nav>
+<!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <!-- Login as Admin -->
+                                        <!-- Login as superadmin -->   
+                        <!-- Dashboard -->
+                        <div class="sb-sidenav-menu-heading">Dashboard</div>
+                            <a class="nav-link" href="/superadmin">
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                Dashboard
+                            </a>
+                        <!-- Menu Absence -->
+                        <div class="sb-sidenav-menu-heading">Absence</div>
+                            <a class="nav-link" href="/absence">
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                            Absence
+                            </a>
+                        <!-- Menu Setting-->
+                        <div class="sb-sidenav-menu-heading">Setting</div>
+                            <!-- 
+                            <a class="nav-link" href="/branch">
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                Branch
+                            </a>
+                            -->
+                            <a class="nav-link" href="/usersettings">
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-user-cog"></i>
+                                </div>
+                                User Setting
+                            </a>
+                            <a class="nav-link" href="/topics">
+                                <div class="sb-nav-link-icon">
+                                    <i class="far fa-newspaper"></i>
+                                </div>
+                                Topics
+                            </a>
+                                    </div>
+            </div>
+        </nav>
+    </div>
+
+            <!-- Start div layoutSidenav_content-->
+    <div id="layoutSidenav_content">
+        <!-- Start main content -->
+        <main>
+            <div class="container-fluid">
+                <h1 class="mt-4">Dashboard</h1>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table mr-1"></i>
+                        List Absence
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-2">
+                                <div class="form-group"> 
+                                    <button type="button" class="btn btn-md btn-success btn-block" onclick="exportSignExcel()" style="border-radius:50px;"> 
+                                        <i class="far fa-file-excel"></i>  
+                                        Export
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <input type="text" name="absence_date" class="form-control" id="absence_date" placeholder="" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="search" class="form-control" id="search" placeholder="Search name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="table-responsive">
+                                    <table class="table table-responsive table-striped table-bordered text-center" id="tableListAbsence" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Absence Date</th>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Email</th>
+                                                <th>Topic</th>
+                                                <th>Signature</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="rowData">
+        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- end main content -->
+        <!-- Modal -->
+<div class="modal fade" id="modalSignature" role="dialog" aria-labelledby="modalSignature" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="img-signature"> 
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">
+            <i class="fas fa-window-close"></i> Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+        <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Cisangkan &copy; Absence Digital 2021</div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="http://localhost:8000/assets/plugins/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="http://localhost:8000/js/scripts.js"></script>
+<script src="/main.js"></script>
+<script src="http://localhost:8000/assets/jquery/datatables.min.js"></script>
+<script type="text/javascript" src="http://localhost:8000/assets/jquerysignature/jquery.signature.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="http://localhost:8000/assets/jquerysignature/signature_pad.js"></script>
+    <script type="text/javascript" src="http://localhost:8000/js/dashboard/index.js" defer></script>
+<script>
+    window.onload = () => {
+        'use strict';
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                    .register('./sw.js');
+        }
+    }
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,221 @@
+.bg-white{
+    background-color:white;
+}
+.prev-img{
+    height: 300px;
+    width: 300px;
+}
+.mt-row-profile{
+    margin-top: 7px;
+}
+.kbw-signature { 
+    width: 100%; 
+    height: 200px;
+}
+#signaturePad canvas{
+  
+    width: 100% !important;
+    height: auto;
+    
+}
+
+#signature{
+    width: auto; height: 250px;
+    border: 1px solid black;
+}
+
+/*js+user */
+.dropdown{}
+.dropdown-toggle,
+.dropdown-menu {
+    text-align: center;
+    min-width: 5rem;
+    margin-top: -60px ;
+    margin-right:90px ;
+}
+
+a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* js+dashboard*/
+input[type="checkbox"] {
+	display:none;
+}
+input[type="checkbox"]:checked ~ .modal-dashboard,
+input[type="checkbox"]:checked ~ .modal-bg-dashboard {
+	display: block;
+}
+.modal-bg-dashboard {
+	width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 9998;
+}
+.modal-dashboard {
+    position: fixed;
+    top: 0;
+    left: -20px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;	
+    width: 1111px;
+    height: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+.modal-dashboard > p {
+	  padding: 15px;
+    margin: 0;
+}
+.modal-header-dashboard {
+    padding: 0 0 !important;
+	  background-color: #f9f9f9;
+    border-bottom: 1px solid #dddddd;
+    box-sizing: border-box;
+    height: 50px;
+}
+.modal-header-dashboard h3 {
+	  margin: 0;
+    box-sizing: border-box;
+    padding-left: 15px;
+    line-height: 50px;
+    color: #4d4d4d;
+    font-size: 16px;
+    display: inline-block;
+}
+.modal-header-dashboard label {
+	box-sizing: border-box;
+    border-left: 1px solid #dddddd;
+    float: right;
+    line-height: 50px;
+    padding: 0 15px 0 15px;
+    cursor: pointer;
+}
+.modal-header-dashboard label:hover img {
+	opacity: 0.6;
+}
+
+/*absen home*/
+.ftco-section {
+    padding: 0 0;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.form-group .submit {
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+}
+
+.btn.btn-primary {
+    background: #088dd0 !important;
+    border: 1px solid black !important;
+    color: #fff !important;
+}
+
+.login-wrap h3 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #088dd0;
+}
+
+.login-wrap .container {
+
+    background-color: #088dd0;
+}
+.login-wrap .icon {
+    width: 80px;
+    height: 80px;
+    background: #088dd0;
+    border-radius: 50%;
+    font-size: 30px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.login-wrap label {
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 0.25rem;
+}
+@media (min-width: 800px) {
+    .login-wrap  {
+        width:1111px;
+    }
+}
+
+@media (max-width: 800px) {
+    .login-wrap  {
+        width:400px;
+    }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}

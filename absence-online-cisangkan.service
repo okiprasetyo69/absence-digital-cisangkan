@@ -1,0 +1,15 @@
+[Unit]
+Description=Absence-Digital Cisangkan
+After=syslog.target network.target
+
+[Service]
+User=it3
+ExecStart=/usr/bin/php /var/www/absencedigital/artisan serve --host 172.73.1.221 --port 10092
+Restart=always
+RestartSec=10s
+KillSignal=SIGINT
+SyslogIdentifier=php-example
+
+
+[Install]
+WantedBy=multi-user.target
